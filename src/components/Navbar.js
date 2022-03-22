@@ -1,11 +1,9 @@
 import * as React from "react";
-import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import InputBase from "@mui/material/InputBase";
 import Badge from "@mui/material/Badge";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
@@ -15,46 +13,9 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
-
-const Search = styled("div")(({ theme }) => ({
-  position: "relative",
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  "&:hover": {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
-  marginRight: theme.spacing(2),
-  marginLeft: 0,
-  width: "100%",
-  [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(3),
-    width: "auto",
-  },
-}));
-
-const SearchIconWrapper = styled("div")(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: "100%",
-  position: "absolute",
-  pointerEvents: "none",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: "inherit",
-  "& .MuiInputBase-input": {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create("width"),
-    width: "100%",
-    [theme.breakpoints.up("md")]: {
-      width: "20ch",
-    },
-  },
-}));
+import { HiUpload } from "react-icons/hi";
+import { CgMenuGridR } from "react-icons/cg";
+import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 
 export default function Navbar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -177,38 +138,26 @@ export default function Navbar() {
           </Typography>
 
           {/* Search */}
-          <div className="flex overflow-hidden">
-            <input
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="pl-1 border-2 outline-none border-gray-300 min-w-52 h-10"
-              type="search"
-              placeholder="Rechercher"
-            />
-              < HiUpload />
+          <div className="flex ">
+            <div className="flex overflow-hidden ml-10">
+              <input
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="pl-1 border-2 outline-none hover:border-sky-600 border-gray-300 min-w-full"
+                type="search"
+                placeholder="Rechercher"
+              />
+            </div>
+            <div className="cursor-pointer flex items-center">
+              <MicSharpIcon />
+            </div>
           </div>
-
-          <MicSharpIcon className="cursor-pointer" />
           <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <IconButton
-              size="large"
-              aria-label="show 4 new mails"
-              color="inherit"
-            >
-           
-              <Badge badgeContent={4} color="error">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
-              </Badge>
+          <Box sx={{ display: "flex" }}>
+            <IconButton>
+              <HiUpload />
+              <CgMenuGridR />
+              <NotificationsNoneIcon />
             </IconButton>
             <IconButton
               size="large"
@@ -219,19 +168,7 @@ export default function Navbar() {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <AccountCircle />
-            </IconButton>
-          </Box>
-          <Box sx={{ display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MoreIcon />
+              <AccountCircle color="blue" fontSize="20" />
             </IconButton>
           </Box>
         </Toolbar>
