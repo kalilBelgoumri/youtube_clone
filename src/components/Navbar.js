@@ -175,15 +175,12 @@ export default function Navbar() {
           >
             <img className="w-20" src="./youtube.webp" alt="youtube" />
           </Typography>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
-            />
-          </Search>
+
+          {/* Search */}
+        
+          <div className="flex justify-center pl-1 border border-gray-500 min-w-52 h-10">
+            <input type="search" placeholder="Rechercher"/>
+          </div>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton
