@@ -10,7 +10,7 @@ import Badge from "@mui/material/Badge";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
-import SearchIcon from "@mui/icons-material/Search";
+import MicSharpIcon from "@mui/icons-material/MicSharp";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
@@ -59,7 +59,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function Navbar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-
+  const [search, setSearch] = React.useState("");
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
@@ -177,10 +177,17 @@ export default function Navbar() {
           </Typography>
 
           {/* Search */}
-        
-          <div className="flex justify-center pl-1 border border-gray-500 min-w-52 h-10">
-            <input type="search" placeholder="Rechercher"/>
+          <div className="flex overflow-hidden">
+            <input
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="pl-1 border-2 outline-none border-gray-300 min-w-52 h-10"
+              type="search"
+              placeholder="Rechercher"
+            />
           </div>
+
+          <MicSharpIcon className="cursor-pointer" />
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton
