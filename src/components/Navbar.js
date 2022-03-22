@@ -185,6 +185,7 @@ export default function Navbar() {
               type="search"
               placeholder="Rechercher"
             />
+              < HiUpload />
           </div>
 
           <MicSharpIcon className="cursor-pointer" />
@@ -195,6 +196,7 @@ export default function Navbar() {
               aria-label="show 4 new mails"
               color="inherit"
             >
+           
               <Badge badgeContent={4} color="error">
                 <MailIcon />
               </Badge>
