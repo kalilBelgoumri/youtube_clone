@@ -1,180 +1,65 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Badge from "@mui/material/Badge";
-import MenuItem from "@mui/material/MenuItem";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
+import BurgerMenu from "./BurgerMenu";
+import { useState } from "react";
 import MicSharpIcon from "@mui/icons-material/MicSharp";
-import AccountCircle from "@mui/icons-material/AccountCircle";
-import MailIcon from "@mui/icons-material/Mail";
-import NotificationsIcon from "@mui/icons-material/Notifications";
-import MoreIcon from "@mui/icons-material/MoreVert";
-import { HiUpload } from "react-icons/hi";
+import SearchIcon from "@mui/icons-material/Search";
+import IconButton from "@mui/material/IconButton";
 import { CgMenuGridR } from "react-icons/cg";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
+import AccountCircle from "@mui/icons-material/AccountCircle";
+import { Container } from "@mui/material";
 
-export default function Navbar() {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-  const [search, setSearch] = React.useState("");
-  const isMenuOpen = Boolean(anchorEl);
-  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
-  const handleProfileMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleMobileMenuClose = () => {
-    setMobileMoreAnchorEl(null);
-  };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-    handleMobileMenuClose();
-  };
-
-  const handleMobileMenuOpen = (event) => {
-    setMobileMoreAnchorEl(event.currentTarget);
-  };
-
-  const menuId = "primary-search-account-menu";
-  const renderMenu = (
-    <Menu
-      anchorEl={anchorEl}
-      anchorOrigin={{
-        vertical: "top",
-        horizontal: "right",
-      }}
-      id={menuId}
-      keepMounted
-      transformOrigin={{
-        vertical: "top",
-        horizontal: "right",
-      }}
-      open={isMenuOpen}
-      onClose={handleMenuClose}
-    >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-    </Menu>
-  );
-
-  const mobileMenuId = "primary-search-account-menu-mobile";
-  const renderMobileMenu = (
-    <Menu
-      anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{
-        vertical: "top",
-        horizontal: "right",
-      }}
-      id={mobileMenuId}
-      keepMounted
-      transformOrigin={{
-        vertical: "top",
-        horizontal: "right",
-      }}
-      open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
-      <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          color="inherit"
-        >
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
-      </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          size="large"
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
-      </MenuItem>
-    </Menu>
-  );
-
+function Navbar() {
+  const [search, setSearch] = useState("");
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" color="transparent">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: "none", sm: "block" } }}
-          >
-            <img className="w-20" src="./youtube.webp" alt="youtube" />
-          </Typography>
-
-          {/* Search */}
-          <div className="flex ">
-            <div className="flex overflow-hidden ml-10">
+    <Container maxWidth >
+      <div className="flex justify-center items-center overflow-hidden ">
+        <div className="flex justify-center items-center">
+          <div className="mb-5 pl-1 pr-4">
+            <BurgerMenu />
+          </div>
+          <div className="flex pl-7 overflow-hidden">
+            <img className="max-w-[100px]" src="./youtube.webp" alt="youtube" />
+            <span className="text-[12px] text-gray-600 -m-4 mt-2 mr-2">FR</span>
+          </div>
+        </div>
+        {/* Search */}
+        <div className="flex mx-auto">
+          <div className="text-black bg-white flex items-center justify-center">
+            <div className="border border-gray-300 overflow-hidden flex">
               <input
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                className="pl-1 border-2 outline-none hover:border-sky-600 border-gray-300 min-w-full"
-                type="search"
-                placeholder="Rechercher"
+                type="text"
+                className="py-[8px] w-[30vw] md:w-[30vw]"
+                placeholder="Rechercher..."
               />
-            </div>
-            <div className="cursor-pointer flex items-center">
-              <MicSharpIcon />
+              <button className="flex items-center justify-center px-5 bg-gray-50 border-l">
+                <SearchIcon sx={{ color: "gray" }} />
+              </button>
             </div>
           </div>
-          <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: "flex" }}>
+          <div className="cursor-pointer flex items-center ml-3">
             <IconButton>
-              <HiUpload />
-              <CgMenuGridR />
-              <NotificationsNoneIcon />
+              <MicSharpIcon fontSize="medium" sx={{ color: "black" }} />
             </IconButton>
-            <IconButton
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle color="blue" fontSize="20" />
-            </IconButton>
-          </Box>
-        </Toolbar>
-      </AppBar>
-      {renderMobileMenu}
-      {renderMenu}
-    </Box>
+          </div>
+        </div>
+        <div className="flex items-center justify-between">
+          <IconButton>
+            <img className="w-8" src="./youtube.svg" alt="youtube" />
+          </IconButton>
+          <IconButton>
+            <CgMenuGridR fontSize="xl" color="black" />
+          </IconButton>
+          <IconButton>
+            <NotificationsNoneIcon fontSize="large" />
+          </IconButton>
+          <IconButton>
+            <AccountCircle fontSize="large" />
+          </IconButton>
+        </div>
+      </div>
+    </Container>
   );
 }
+
+export default Navbar;
