@@ -1,23 +1,16 @@
-import { stack as Menu } from 'react-burger-menu'
-import HomeIcon from '@mui/icons-material/Home'
-import { FirebaseContext } from '../Firebase'
-import { useNavigate } from 'react-router-dom'
-import { useContext } from 'react'
+import { stack as Menu } from "react-burger-menu";
+import HomeIcon from "@mui/icons-material/Home";
 // import { HiOutlineLogout } from 'react-icons/hi'
-import AccountBoxRoundedIcon from '@mui/icons-material/AccountBoxRounded'
-import ExitToAppRoundedIcon from '@mui/icons-material/ExitToAppRounded'
-import './index.css'
+import AccountBoxRoundedIcon from "@mui/icons-material/AccountBoxRounded";
+import ExitToAppRoundedIcon from "@mui/icons-material/ExitToAppRounded";
 
 export default function BurgerMenu() {
   const showSettings = (e) => {
-    e.preventDefault()
-  }
-  const navigate = useNavigate()
-  const firebase = useContext(FirebaseContext)
-
-  // NOTE: You also need to provide styles, see https://github.com/negomi/react-burger-menu#styling
+    e.preventDefault();
+  };
+  
   return (
-    <Menu right width={220}>
+    <Menu left width={220}>
       <div className="flex items-center justify-center">
         <div className="flex gap-3">
           <AccountBoxRoundedIcon />
@@ -44,38 +37,18 @@ export default function BurgerMenu() {
           </a>
         </div>
       </div>
-      {firebase.isLoggedIN() ? (
-        <div className="flex items-center justify-center">
-          <div className="flex gap-3">
-            <ExitToAppRoundedIcon />
-            <a
-              onClick={async () => {
-                await firebase.logout()
-                navigate('/')
-              }}
-              id="Logout"
-              className="menu-item"
-              href="/"
-            >
-              Deconnexion
-            </a>
-          </div>
+
+      <div className="flex items-center justify-center">
+        <div className="flex gap-3">
+          <ExitToAppRoundedIcon />
         </div>
-      ) : (
-        <div className="flex items-center justify-center">
-          <div className="flex gap-3">
-            <ExitToAppRoundedIcon />
-            <a
-              onClick={() => navigate('/login')}
-              id="Login"
-              className="menu-item"
-              href="/login"
-            >
-              Connexion
-            </a>
-          </div>
+      </div>
+
+      <div className="flex items-center justify-center">
+        <div className="flex gap-3">
+          <ExitToAppRoundedIcon />
         </div>
-      )}
+      </div>
     </Menu>
-  )
+  );
 }

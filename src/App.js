@@ -1,12 +1,15 @@
-import Navbar from "./components/Navbar";
-
+import NavbarOk from "./components/NavbarOk";
 
 function App() {
   return (
-    <div >
-      <Navbar />
- 
-     </div>
+    <div>
+      <header>
+        <NavbarOk />
+      </header>
+      <main></main>
+
+      <footer></footer>
+    </div>
   );
 }
 
