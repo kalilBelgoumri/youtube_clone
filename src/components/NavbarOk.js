@@ -21,12 +21,13 @@ function NavbarOk() {
         <div className="mb-6 ml-3">
           <BurgerMenu />
         </div>
-        <div className="flex pl-20">
+        <div className="flex pl-14">
           <img
-            className="max-w-[12vw]"
+            className="max-w-[8vw]"
             src="./youtube.webp"
             alt="youtube"
           />
+          <span className="text-xs text-gray-600 -m-3 mt-4 mr-2">FR</span>
         </div>
       </div>
       {/* Search */}
