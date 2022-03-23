@@ -12,78 +12,54 @@ import { HiUpload } from "react-icons/hi";
 import { CgMenuGridR } from "react-icons/cg";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import AccountCircle from "@mui/icons-material/AccountCircle";
+import { Container } from "@mui/material";
 
 function NavbarOk() {
   const [search, setSearch] = useState("");
   return (
-    <div className="flex h-20 justify-center items-center">
+   <Container>
+    <div className="flex justify-center items-center overflow-hidden pt-2">
       <div className="flex justify-center items-center">
-        <div className="mb-6 ml-3">
+        <div className="mb-5 pl-3">
           <BurgerMenu />
         </div>
-        <div className="flex pl-14">
-          <img
-            className="max-w-[8vw]"
-            src="./youtube.webp"
-            alt="youtube"
-          />
-          <span className="text-xs text-gray-600 -m-3 mt-4 mr-2">FR</span>
+        <div className="flex pl-7 overflow-hidden">
+          <img className="max-w-[35vh]" src="./youtube.webp" alt="youtube" />
+          <span className="text-[6px] text-gray-600 -m-2 mt-2 mr-3">FR</span>
         </div>
       </div>
       {/* Search */}
       <div className="flex mx-auto">
-        <Paper
-          component="form"
-          sx={{
-            p: "2px 4px",
-            display: "flex",
-            alignItems: "center",
-            width: 500,
-            height: 50,
-          }}
-        >
-          <InputBase
-            sx={{ ml: 1, flex: 1 }}
-            placeholder="Chercher"
-            inputProps={{ "aria-label": "Chercher" }}
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-          <Divider sx={{ height: "100%", m: 5 }} orientation="vertical" />
-          <IconButton
-            type="submit"
-            sx={{
-              p: "10px",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-            aria-label="search"
-          >
-            <SearchIcon />
-          </IconButton>
-        </Paper>
+        <div class="font-sans text-black bg-white flex items-center justify-center">
+          <div class="border overflow-hidden flex">
+            <input type="text" class="px-5 py-[3px]" placeholder="Search..." />
+            <button class="flex items-center justify-center px-4 border-l">
+              <SearchIcon />
+            </button>
+          </div>
+        </div>
         <div className="cursor-pointer flex items-center ml-3">
           <IconButton>
-            <MicSharpIcon />
+            <MicSharpIcon fontSize="small" />
           </IconButton>
         </div>
       </div>
       <div className="flex items-center justify-between">
         <IconButton>
-          <img src="./youtube.svg" alt="" />
+          <img className="w-4" src="./youtube.svg" alt="" />
         </IconButton>
         <IconButton>
-          <CgMenuGridR />
+          <CgMenuGridR fontSize="small" />
         </IconButton>
         <IconButton>
-          <NotificationsNoneIcon />
+          <NotificationsNoneIcon fontSize="small" />
         </IconButton>
         <IconButton>
           <AccountCircle />
         </IconButton>
       </div>
     </div>
+    </Container>
   );
 }
 
