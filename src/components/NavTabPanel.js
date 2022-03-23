@@ -1,10 +1,14 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-
+import * as React from "react";
+import PropTypes from "prop-types";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import { MdHomeFilled } from "react-icons/md";
+import { IoCompassOutline } from "react-icons/io5";
+import { ImYoutube2 } from "react-icons/im";
+import { BsCollectionPlay, BsPlayBtn } from "react-icons/bs";
+import Home from "../pages/Home";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -17,7 +21,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
+        <Box sx={{ width: "100%" }}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -34,11 +38,11 @@ TabPanel.propTypes = {
 function a11yProps(index) {
   return {
     id: `vertical-tab-${index}`,
-    'aria-controls': `vertical-tabpanel-${index}`,
+    "aria-controls": `vertical-tabpanel-${index}`,
   };
 }
 
-export default function VerticalTabs() {
+export default function NavTabPanel() {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -47,44 +51,99 @@ export default function VerticalTabs() {
 
   return (
     <Box
-      sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', height: 224 }}
+      sx={{
+        marginTop: 5,
+        flexGrow: 1,
+        bgcolor: "background.paper",
+        height: 500,
+        display: "flex",
+      }}
     >
       <Tabs
         orientation="vertical"
-        variant="scrollable"
+        variant="scrolable"
         value={value}
         onChange={handleChange}
         aria-label="Vertical tabs example"
-        sx={{ borderRight: 1, borderColor: 'divider' }}
+        sx={{
+          width: "300px",
+          display: "flex",
+        }}
       >
-        <Tab label="Item One" {...a11yProps(0)} />
-        <Tab label="Item Two" {...a11yProps(1)} />
-        <Tab label="Item Three" {...a11yProps(2)} />
-        <Tab label="Item Four" {...a11yProps(3)} />
-        <Tab label="Item Five" {...a11yProps(4)} />
-        <Tab label="Item Six" {...a11yProps(5)} />
-        <Tab label="Item Seven" {...a11yProps(6)} />
+        <Tab
+          sx={{
+            color: "black",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "start",
+            flexDirection: "row",
+          }}
+          icon={<MdHomeFilled size="24" />}
+          label="Acceuil"
+          {...a11yProps(0)}
+        />
+        <Tab
+          sx={{
+            color: "black",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "start",
+            flexDirection: "row",
+          }}
+          icon={<IoCompassOutline size="24" />}
+          label="Explorer"
+          {...a11yProps(2)}
+        />
+        <Tab
+          sx={{
+            color: "black",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "start",
+            flexDirection: "row",
+          }}
+          icon={<ImYoutube2 size="30" />}
+          label="Short"
+          {...a11yProps(2)}
+        />
+        <Tab
+          sx={{
+            color: "black",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "start",
+            flexDirection: "row",
+          }}
+          icon={<BsCollectionPlay size="24" />}
+          label="Abonnements"
+          {...a11yProps(3)}
+        />
+        <div className="divider divide-x-2 divide-black border-b-2" />
+        <Tab
+          sx={{
+            color: "black",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "start",
+            flexDirection: "row",
+          }}
+          icon={<BsPlayBtn size="24" />}
+          label="Bibliothèque"
+          {...a11yProps(4)}
+        />
       </Tabs>
-      <TabPanel value={value} index={0}>
-        Item One
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        Item Two
+      <TabPanel className="bg-gray-600" value={value} index={0}>
+        <Home />
+        
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+        Explorer
       </TabPanel>
       <TabPanel value={value} index={3}>
-        Item Four
+        Abonnements
       </TabPanel>
       <TabPanel value={value} index={4}>
-        Item Five
-      </TabPanel>
-      <TabPanel value={value} index={5}>
-        Item Six
-      </TabPanel>
-      <TabPanel value={value} index={6}>
-        Item Seven
+        Bibliothèque
       </TabPanel>
     </Box>
   );
