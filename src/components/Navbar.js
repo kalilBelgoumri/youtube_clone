@@ -1,6 +1,5 @@
-import * as React from "react";
 import BurgerMenu from "./BurgerMenu";
-import { useState } from "react";
+import { useContext,useState } from "react";
 import MicSharpIcon from "@mui/icons-material/MicSharp";
 import SearchIcon from "@mui/icons-material/Search";
 import IconButton from "@mui/material/IconButton";
@@ -8,11 +7,14 @@ import { CgMenuGridR } from "react-icons/cg";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import { Container } from "@mui/material";
+import YoutubeContext from "../context/YoutubeContext";
 
 function Navbar() {
-  const [search, setSearch] = useState("");
+  const [query,setQuery] = useState([])
+  const posts = useContext(YoutubeContext);
+
   return (
-    <Container maxWidth >
+    <Container>
       <div className="flex justify-center items-center overflow-hidden ">
         <div className="flex justify-center items-center">
           <div className="mb-5 pl-1 pr-4">
@@ -28,6 +30,8 @@ function Navbar() {
           <div className="text-black bg-white flex items-center justify-center">
             <div className="border border-gray-300 overflow-hidden flex">
               <input
+                onChange={(e) => setQuery(e.target.value)}
+                value={query}
                 type="text"
                 className="py-[8px] w-[30vw] md:w-[30vw]"
                 placeholder="Rechercher..."
@@ -58,6 +62,7 @@ function Navbar() {
           </IconButton>
         </div>
       </div>
+      {posts.map && posts?.map((post) => console.log(post))}
     </Container>
   );
 }

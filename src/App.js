@@ -1,17 +1,18 @@
 import Navbar from "./components/Navbar";
 import NavTabPanel from "./components/NavTabPanel";
+import { YoutubeProvider } from "./context/YoutubeContext";
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <div>
-      <header>
-        <Navbar />
-        <NavTabPanel />
-      </header>
-      <main></main>
-
-      <footer></footer>
-    </div>
+    <YoutubeProvider>
+      <div>
+        <header>
+          <Navbar />
+          <NavTabPanel />
+        </header>
+      </div>
+    </YoutubeProvider>
   );
 }
 

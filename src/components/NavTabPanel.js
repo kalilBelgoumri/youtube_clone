@@ -61,7 +61,6 @@ export default function NavTabPanel() {
     >
       <Tabs
         orientation="vertical"
-        variant="scrolable"
         value={value}
         onChange={handleChange}
         aria-label="Vertical tabs example"
@@ -133,13 +132,13 @@ export default function NavTabPanel() {
         />
       </Tabs>
       <TabPanel className="bg-gray-600" value={value} index={0}>
-        <Home />
         
       </TabPanel>
       <TabPanel value={value} index={2}>
         Explorer
       </TabPanel>
       <TabPanel value={value} index={3}>
+        <Home />
         Abonnements
       </TabPanel>
       <TabPanel value={value} index={4}>
