@@ -99,10 +99,3 @@
 .bm-burger-bars {
     height: 5% !important;
 }
-
-
-/* NavTabPanel  */
-
-.MuiTabs-indicator {
-    display: none;
-}

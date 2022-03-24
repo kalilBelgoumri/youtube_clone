@@ -5,14 +5,17 @@ const YoutubeContext = createContext();
 
 export const YoutubeProvider = ({ children }) => {
   const [posts, setPosts] = useState([]);
+  const [search, setSearch] = useState("");
 
-  const key = process.env.REACT_APP_GOOGLE_API
+
+
+
 
   useEffect(() => {
     const fetchData = async () => {
       await axios
         .get(
-          `https://www.googleapis.com/youtube/v3/search?maxResults=5&part=id&type=video&channelId=UCgdHSFcXvkN6O3NXvif0-pA&key=${key}`
+          `https://www.googleapis.com/youtube/v3/search?maxResults=10&part=id&type=video&key=${process.env.REACT_APP_GOOGLE_API}`
         )
         .then((res) => {
           setPosts(res.data.items);
@@ -20,11 +23,13 @@ export const YoutubeProvider = ({ children }) => {
         .catch((error) => console.log(error));
     };
     fetchData();
-  }, []);
+  }, [search]);
   console.log(posts);
 
   return (
-    <YoutubeContext.Provider value={{ posts }}>
+    <YoutubeContext.Provider
+      value={{ posts, search, setSearch }}
+    >
       {children}
     </YoutubeContext.Provider>
   );

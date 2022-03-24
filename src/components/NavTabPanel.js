@@ -2,7 +2,6 @@ import * as React from "react";
 import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { MdHomeFilled } from "react-icons/md";
 import { IoCompassOutline } from "react-icons/io5";
@@ -22,7 +21,7 @@ function TabPanel(props) {
     >
       {value === index && (
         <Box sx={{ width: "100%" }}>
-          <Typography>{children}</Typography>
+          <p>{children}</p>
         </Box>
       )}
     </div>
@@ -65,6 +64,9 @@ export default function NavTabPanel() {
         onChange={handleChange}
         aria-label="Vertical tabs example"
         sx={{
+          ".MuiTabs-indicator": {
+            display: "none",
+          },
           width: "300px",
           display: "flex",
         }}
@@ -91,7 +93,7 @@ export default function NavTabPanel() {
           }}
           icon={<IoCompassOutline size="24" />}
           label="Explorer"
-          {...a11yProps(2)}
+          {...a11yProps(1)}
         />
         <Tab
           sx={{
@@ -131,17 +133,20 @@ export default function NavTabPanel() {
           {...a11yProps(4)}
         />
       </Tabs>
-      <TabPanel className="bg-gray-600" value={value} index={0}></TabPanel>
-      <TabPanel value={value} index={2}>
-        Explorer
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-        <Home />
-        Abonnements
-      </TabPanel>
-      <TabPanel value={value} index={4}>
-        Bibliothèque
-      </TabPanel>
+      <div>
+        <TabPanel value={value} index={0}>
+          <Home />
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          Explorer
+        </TabPanel>
+        <TabPanel value={value} index={2}>
+          Abonnements
+        </TabPanel>
+        <TabPanel value={value} index={3}>
+          Bibliothèque
+        </TabPanel>
+      </div>
     </Box>
   );
 }
