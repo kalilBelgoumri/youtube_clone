@@ -131,9 +131,7 @@ export default function NavTabPanel() {
           {...a11yProps(4)}
         />
       </Tabs>
-      <TabPanel className="bg-gray-600" value={value} index={0}>
-        
-      </TabPanel>
+      <TabPanel className="bg-gray-600" value={value} index={0}></TabPanel>
       <TabPanel value={value} index={2}>
         Explorer
       </TabPanel>

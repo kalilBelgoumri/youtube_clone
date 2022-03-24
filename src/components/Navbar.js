@@ -14,7 +14,6 @@ function Navbar() {
   const posts = useContext(YoutubeContext);
 
   return (
-    <Container>
       <div className="flex justify-center items-center overflow-hidden ">
         <div className="flex justify-center items-center">
           <div className="mb-5 pl-1 pr-4">
@@ -62,8 +61,6 @@ function Navbar() {
           </IconButton>
         </div>
       </div>
-      {posts.map && posts?.map((post) => console.log(post))}
-    </Container>
   );
 }
 

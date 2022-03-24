@@ -9,7 +9,7 @@ export default function CardMediaYoutube({video,typo}) {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
-        <CardMedia component="iframe" src={video} allow="autoPlay"/>
+        <CardMedia component="video" src={video} allow="autoPlay"/>
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {typo}

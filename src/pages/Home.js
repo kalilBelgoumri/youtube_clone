@@ -6,13 +6,12 @@ function Home() {
   const { posts } = useContext(YoutubeContext);
   console.log(posts);
   return (
-    <div>
+    <div className="grid grid-cols-4 gap-4 ">
       {posts?.map((post, index) => (
-        <ul className="flex flex-row flex-wrap">
-          <li key={index}>
-            <CardMediaYoutube typo={post.contentDetails.dimension} />
-          </li>
-        </ul>
+        <>
+          <CardMediaYoutube video={post.id.videoId} />
+        
+        </>
       ))}
     </div>
   );

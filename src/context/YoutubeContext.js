@@ -4,17 +4,15 @@ import axios from "axios";
 const YoutubeContext = createContext();
 
 export const YoutubeProvider = ({ children }) => {
- 
   const [posts, setPosts] = useState([]);
 
-  const key = "AIzaSyDXK_ArJGqFur36FitNKemkBH4xs9rsxjE";
+  const key = process.env.REACT_APP_GOOGLE_API
 
   useEffect(() => {
     const fetchData = async () => {
       await axios
         .get(
-          `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=US&key=${key}
-         &part=snippet,contentDetails,statistics,status`
+          `https://www.googleapis.com/youtube/v3/search?maxResults=5&part=id&type=video&channelId=UCgdHSFcXvkN6O3NXvif0-pA&key=${key}`
         )
         .then((res) => {
           setPosts(res.data.items);
@@ -22,8 +20,9 @@ export const YoutubeProvider = ({ children }) => {
         .catch((error) => console.log(error));
     };
     fetchData();
-   }, []);
-   
+  }, []);
+  console.log(posts);
+
   return (
     <YoutubeContext.Provider value={{ posts }}>
       {children}
