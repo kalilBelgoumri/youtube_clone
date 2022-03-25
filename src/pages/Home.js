@@ -8,7 +8,6 @@ import data from "../data/data";
 
 function Home() {
   const { posts } = useContext(YoutubeContext);
-  const boxRef = React.useRef(null);
 
   console.log({ posts });
   console.log(data);
@@ -35,7 +34,7 @@ function Home() {
               }
 
               <Paper className="flex justify-center text-center pt-3 w-[27vw] h-28 xl:w-96 xl:h-48">
-                {post.id.kind}
+                {post.id.title}
               </Paper>
             </div>
 

@@ -11,7 +11,7 @@ export const YoutubeProvider = ({ children }) => {
     const fetchData = async () => {
       await axios
         .get(
-          `https://www.googleapis.com/youtube/v3/search?maxResults=10&part=snippet&statistics&brandingSettings&contentDetails&contentOwnerDetailssnippet&thumbnails&snippet&field&id&type=video&title&key=${process.env.REACT_APP_GOOGLE_API}`
+          `https://www.googleapis.com/youtube/v3/search?maxResults=10&part=snippet&statistics&brandingSettings&contentDetails&contentOwnerDetailssnippet&thumbnails&snippet&field&id&type=video&title&q=${search}key=${process.env.REACT_APP_GOOGLE_API}`
         )
         .then((res) => {
           setPosts(res.data.items);

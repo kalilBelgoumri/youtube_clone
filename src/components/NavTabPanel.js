@@ -48,6 +48,14 @@ export default function NavTabPanel() {
     setValue(newValue);
   };
 
+  const tabStyle = {
+    fontSize: 10,
+    color: "black",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "start",
+  };
+
   return (
     <Box
       sx={{
@@ -72,62 +80,32 @@ export default function NavTabPanel() {
         }}
       >
         <Tab
-          sx={{
-            color: "black",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "start",
-            flexDirection: "row",
-          }}
+          sx={tabStyle}
           icon={<MdHomeFilled size="24" />}
           label="Acceuil"
           {...a11yProps(0)}
         />
         <Tab
-          sx={{
-            color: "black",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "start",
-            flexDirection: "row",
-          }}
+          sx={tabStyle}
           icon={<IoCompassOutline size="24" />}
           label="Explorer"
           {...a11yProps(1)}
         />
         <Tab
-          sx={{
-            color: "black",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "start",
-            flexDirection: "row",
-          }}
+          sx={tabStyle}
           icon={<ImYoutube2 size="30" />}
           label="Short"
           {...a11yProps(2)}
         />
         <Tab
-          sx={{
-            color: "black",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "start",
-            flexDirection: "row",
-          }}
+          sx={tabStyle}
           icon={<BsCollectionPlay size="24" />}
           label="Abonnements"
           {...a11yProps(3)}
         />
         <div className="divider divide-x-2 divide-black border-b-2" />
         <Tab
-          sx={{
-            color: "black",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "start",
-            flexDirection: "row",
-          }}
+          sx={tabStyle}
           icon={<BsPlayBtn size="24" />}
           label="Bibliothèque"
           {...a11yProps(4)}
@@ -141,7 +119,6 @@ export default function NavTabPanel() {
           Explorer
         </TabPanel>
         <TabPanel value={value} index={2}>
-    
           Abonnements
         </TabPanel>
         <TabPanel value={value} index={3}>
