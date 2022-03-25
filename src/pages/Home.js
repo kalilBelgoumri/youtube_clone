@@ -34,8 +34,8 @@ function Home() {
                 />
               }
 
-              <Paper className="w-[27vw] h-28 xl:w-96 xl:h-52">
-                {post.snippet.title}
+              <Paper className="flex justify-center text-center pt-3 w-[27vw] h-28 xl:w-96 xl:h-48">
+                {post.id.kind}
               </Paper>
             </div>
 

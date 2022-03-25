@@ -141,6 +141,7 @@ export default function NavTabPanel() {
           Explorer
         </TabPanel>
         <TabPanel value={value} index={2}>
+    
           Abonnements
         </TabPanel>
         <TabPanel value={value} index={3}>
