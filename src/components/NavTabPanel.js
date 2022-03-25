@@ -62,8 +62,8 @@ export default function NavTabPanel() {
       sx={{
         marginTop: 5,
         flexGrow: 1,
-        bgcolor: "background.paper",
-        height: 500,
+        bgcolor: "#f9f9f9",
+        height: 1000,
         display: "flex",
       }}
     >

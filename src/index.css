@@ -8,8 +8,18 @@
     }
 }
 
+
+
 .MuiAppBar-root {
     background: transparent;
+}
+
+.css-111bd38-MuiTabs-root {
+    width:30vw !important
+}
+
+.MuiTabs-scroller {
+    background: white;
 }
 
 

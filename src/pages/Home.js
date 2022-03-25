@@ -13,11 +13,11 @@ function Home() {
   console.log(data);
   return (
     <>
-      <div className="overflow-x-scroll flex justify-center items-center border-b-[1px] border-t-[1px] px-20">
+      <div className="overflow-x-scroll scrollbar-hide flex justify-center items-center border-b-[1px] border-t-[1px] px-20">
         {data.map((item, index) => (
           <li
             key={index}
-            className="bg-gray-100 flex justify-center items-center cursor-pointer text-center truncate px-5 m-3 py-2 border rounded-full"
+            className="bg-gray-100 flex justify-center items-center cursor-pointer text-center truncate px-20 m-3 py-2 border rounded-full"
           >
             {item}
           </li>
