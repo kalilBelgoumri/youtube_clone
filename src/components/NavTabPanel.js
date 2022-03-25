@@ -54,6 +54,7 @@ export default function NavTabPanel() {
     display: "flex",
     alignItems: "center",
     justifyContent: "start",
+    fontWeight: 100,
   };
 
   return (
@@ -81,8 +82,8 @@ export default function NavTabPanel() {
       >
         <Tab
           sx={tabStyle}
-          icon={<MdHomeFilled size="24" />}
-          label="Acceuil"
+          icon={<MdHomeFilled color="black" size="24" />}
+          label={<span className="text-black">Acceuil</span>}
           {...a11yProps(0)}
         />
         <Tab

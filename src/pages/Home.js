@@ -13,11 +13,14 @@ function Home() {
   console.log(data);
   return (
     <>
-      <div className="flex justify-center items-center border-b-[1px] border-t-[1px] px-20 scroll-pl-6 snap-x">
-        {data.map((item) => (
-          <div className="bg-gray-100 cursor-pointer text-center truncate px-5 m-3 py-2 border rounded-full snap-start">
+      <div className="overflow-x-scroll flex justify-center items-center border-b-[1px] border-t-[1px] px-20">
+        {data.map((item, index) => (
+          <li
+            key={index}
+            className="bg-gray-100 flex justify-center items-center cursor-pointer text-center truncate px-5 m-3 py-2 border rounded-full"
+          >
             {item}
-          </div>
+          </li>
         ))}
       </div>
       <div className="px-10 gap-y-5 py-5 grid grid-cols-2 xl:grid-cols-8  ">
