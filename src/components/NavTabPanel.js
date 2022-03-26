@@ -8,6 +8,7 @@ import { IoCompassOutline } from "react-icons/io5";
 import { ImYoutube2 } from "react-icons/im";
 import { BsCollectionPlay, BsPlayBtn } from "react-icons/bs";
 import Home from "../pages/Home";
+import Explorer from "../pages/Explorer";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -117,7 +118,7 @@ export default function NavTabPanel() {
           <Home />
         </TabPanel>
         <TabPanel value={value} index={1}>
-          Explorer
+          <Explorer />
         </TabPanel>
         <TabPanel value={value} index={2}>
           Abonnements
