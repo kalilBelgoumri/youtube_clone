@@ -1,4 +1,13 @@
 import img from "../assets/trending.png";
+import img1 from "../assets/music.png";
+import img2 from "../assets/movies.png";
+import img3 from "../assets/live.png";
+import img4 from "../assets/gaming.png";
+import img5 from "../assets/news.png";
+import img6 from "../assets/sports.png";
+import img7 from "../assets/learning.png";
+import img8 from "../assets/fashion.png";
+
 const DataExplorer = [
   {
     name: "Tendances",
@@ -6,36 +15,36 @@ const DataExplorer = [
   },
   {
     name: "Music",
-    icon: "",
+    icon: img1,
   },
   {
     name: "Film et Tv",
-    icon: "",
+    icon: img2,
   },
   {
     name: "Direct",
-    icon: "",
+    icon: img3,
   },
   {
     name: "Jeux vidéo",
-    icon: "",
+    icon: img4,
   },
   {
     name: "Actualités",
-    icon: "",
+    icon: img5,
   },
   {
     name: "Sport",
-    icon: "",
+    icon: img6,
   },
   {
     name: "Savoirs et cultures",
-    icon: "",
+    icon: img7,
   },
   {
     name: "Mode et beauté",
 
-    icon: "",
+    icon: img8,
   },
 ];
 
