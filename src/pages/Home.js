@@ -5,7 +5,7 @@ import YoutubeContext from "../context/YoutubeContext";
 import YouTube from "react-youtube";
 import { Paper } from "@mui/material";
 import data from "../data/data";
-import MoreIcon from "@mui/icons-material/MoreVert";
+import PositionedMenu from "../components/MoreIcon";
 
 function Home() {
   const { posts } = useContext(YoutubeContext);
@@ -40,9 +40,9 @@ function Home() {
                 />
               }
 
-              <Paper className="flex text-sm cursor-pointer px-7  text-left pt-3 w-[27vw] h-20 xl:w-96 xl:h-36">
+              <Paper className="flex justify-end text-sm cursor-pointer pl-7  text-left pt-3 w-[27vw] h-20 xl:w-96 xl:h-36">
                 {post.snippet.title}
-                <MoreIcon />
+                <PositionedMenu />
               </Paper>
             </div>
           </>
