@@ -77,7 +77,7 @@ export default function NavTabPanel() {
           ".MuiTabs-indicator": {
             display: "none",
           },
-          width: "300px",
+          width: "200px",
           display: "flex",
         }}
       >
