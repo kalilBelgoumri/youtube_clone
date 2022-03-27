@@ -18,7 +18,7 @@ function TabPanel({ children, value, index, ...other }) {
       aria-labelledby={`vertical-tab-${index}`}
       {...other}
     >
-      {value === index && <div className="w-screen">{children}</div>}
+      {value === index && <div className="w-[100vw]">{children}</div>}
     </div>
   );
 }

@@ -7,15 +7,24 @@ import { CgMenuGridR } from "react-icons/cg";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import YoutubeContext from "../context/YoutubeContext";
+import MenuIcon from "@mui/icons-material/Menu";
 
 function Navbar() {
   const { search, setSearch } = useContext(YoutubeContext);
+  const [open, setOpen] = useState(false);
+
+  const toggle = () => {
+    setOpen(!open);
+  };
 
   return (
     <div className="flex justify-center items-center overflow-hidden ">
       <div className="flex justify-center items-center">
-        <div className="mb-5 pl-1 pr-4">
-          <BurgerMenu />
+        <div className="mb-5 pl-1 pr-4 cursor-pointer">
+          {/* <BurgerMenu /> */}
+          <IconButton onClick={toggle} className={open ? "" : null}>
+            <MenuIcon />
+          </IconButton>
         </div>
         <div className="flex pl-7 overflow-hidden">
           <img className="max-w-[100px]" src="./youtube.webp" alt="youtube" />
