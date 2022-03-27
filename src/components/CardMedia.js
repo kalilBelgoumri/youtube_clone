@@ -12,9 +12,7 @@ export default function CardMediaYoutube({ videoId, typo, src }) {
         <CardMedia component="video" src={videoId} allow="autoPlay" />
         <img src={src} alt="icon" />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {typo}
-          </Typography>
+          <p>{typo}</p>
         </CardContent>
       </CardActionArea>
     </Card>

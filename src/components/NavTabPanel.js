@@ -9,9 +9,7 @@ import { ImYoutube2 } from "react-icons/im";
 import { BsCollectionPlay, BsPlayBtn } from "react-icons/bs";
 import Home from "../pages/Home";
 import Explorer from "../pages/Explorer";
-function TabPanel(props) {
-  const { children, value, index, ...other } = props;
-
+function TabPanel({ children, value, index, ...other }) {
   return (
     <div
       role="tabpanel"
@@ -20,11 +18,7 @@ function TabPanel(props) {
       aria-labelledby={`vertical-tab-${index}`}
       {...other}
     >
-      {value === index && (
-        <Box sx={{ width: "100%" }}>
-          <p>{children}</p>
-        </Box>
-      )}
+      {value === index && <div className="w-screen">{children}</div>}
     </div>
   );
 }
@@ -91,26 +85,26 @@ export default function NavTabPanel() {
           sx={tabStyle}
           icon={<IoCompassOutline size="24" />}
           label="Explorer"
-          {...a11yProps(1)}
+          {...a11yProps(0)}
         />
         <Tab
           sx={tabStyle}
           icon={<ImYoutube2 size="30" />}
           label="Short"
-          {...a11yProps(2)}
+          {...a11yProps(1)}
         />
         <Tab
           sx={tabStyle}
           icon={<BsCollectionPlay size="24" />}
           label="Abonnements"
-          {...a11yProps(3)}
+          {...a11yProps(2)}
         />
         <div className="divider divide-x-2 divide-black border-b-2" />
         <Tab
           sx={tabStyle}
           icon={<BsPlayBtn size="24" />}
           label="Bibliothèque"
-          {...a11yProps(4)}
+          {...a11yProps(3)}
         />
       </Tabs>
       <div className="overflow-auto scroll-pl-6 snap-x h-screen">

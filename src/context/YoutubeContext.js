@@ -16,11 +16,10 @@ export const YoutubeProvider = ({ children }) => {
         .then((res) => {
           setPosts(res.data.items);
         })
-        .catch((error) => console.log(error));
+        .catch((error) => error);
     };
     fetchData();
   }, [search]);
-  console.log(posts);
 
   return (
     <YoutubeContext.Provider value={{ posts, search, setSearch }}>
