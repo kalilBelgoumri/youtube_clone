@@ -23,7 +23,7 @@ function Home() {
           </li>
         ))}
       </div>
-      <div className="px-10 gap-y-5 py-5 grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  ">
+      <div className="pr-48 pl-10 gap-y-5 py-5 grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  ">
         {posts?.map((post) => (
           <div
             key={uniqid()}

@@ -107,7 +107,7 @@ export default function NavTabPanel() {
           {...a11yProps(3)}
         />
       </Tabs>
-      <div className="overflow-auto scroll-pl-6 snap-x h-screen">
+      <div className="overflow-hidden scroll-pl-6 snap-x h-screen flex">
         <TabPanel value={value} index={0}>
           <Home />
         </TabPanel>
