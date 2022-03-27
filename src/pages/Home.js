@@ -40,9 +40,11 @@ function Home() {
                 />
               }
 
-              <Paper className="flex justify-end text-sm cursor-pointer pl-7  text-left pt-3 w-[27vw] h-20 xl:w-96 xl:h-36">
+              <Paper className="flex justify-end  text-sm cursor-pointer pl-7  text-left pt-3 w-[27vw] h-20 xl:w-96 xl:h-36">
                 {post.snippet.title}
-                <PositionedMenu />
+                <div className="invisible hover:flex">
+                  <PositionedMenu />
+                </div>
               </Paper>
             </div>
           </>
