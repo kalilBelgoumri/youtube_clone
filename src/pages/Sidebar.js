@@ -9,7 +9,7 @@ import { Divider } from "@mui/material";
 function Sidebar() {
   return (
     <div
-      className="bg-[##F9F9] w-[13vw] absolute h-screen flex flex-row ml-4 mt-10 "
+      className="bg-[#f9f9f9] w-[13vw] justify-center absolute h-screen flex flex-row ml-4 mt-10 lg:justify-start"
       id="tabsNav"
     >
       <nav>
@@ -17,23 +17,29 @@ function Sidebar() {
           <li>
             <Link className="inline-flex items-center" to="/">
               <MdHomeFilled color="black" size="26" />
-              <span className="pl-6 py-2 font-medium text-sm">Acceuil</span>
+              <span className="hidden lg:inline-flex pl-6 lg:py-2 lg:font-medium lg:text-sm">
+                Acceuil
+              </span>
             </Link>
           </li>
           <Link className="inline-flex items-center" to="/Explorer">
             <IoCompassOutline size="26" />
-            <span className="pl-6 py-2 font-medium text-sm">Explorer</span>
+            <span className="hidden lg:inline-flex pl-6 py-2 font-medium text-sm">
+              Explorer
+            </span>
           </Link>
           <li>
             <Link className="inline-flex items-center" to="/Short">
               <ImYoutube2 size="28" />
-              <span className="pl-6 py-2 font-medium text-sm">Short</span>
+              <span className="hidden lg:inline-flex pl-6 py-2 font-medium text-sm">
+                Short
+              </span>
             </Link>
           </li>
           <li>
             <Link className="inline-flex items-center" to="/">
               <BsCollectionPlay size="22" />
-              <span className="pl-6 py-2 font-medium text-sm">
+              <span className="hidden lg:inline-flex pl-6 py-2 font-medium text-sm">
                 Abonnements
                 <Divider sx={{ width: "10vw", paddingTop: 3 }} />
               </span>
@@ -42,7 +48,7 @@ function Sidebar() {
           <li>
             <Link className="inline-flex items-center" to="/">
               <BsPlayBtn size="22" />
-              <span className="pl-6 py-2 font-medium text-sm">
+              <span className="hidden lg:inline-flex pl-6 py-2 font-medium text-sm">
                 Bibliothèque
               </span>
             </Link>

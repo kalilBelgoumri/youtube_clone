@@ -19,7 +19,7 @@ function Home() {
       <div className="pl-[15vw]">
         <div className="overflow-x-scroll pl-[50vw] pr-[2vw] scrollbar-hide flex justify-center items-center border-b-[1px] border-t-[1px] ">
           <MdOutlineKeyboardArrowLeft
-            className="absolute left-72 cursor-pointer"
+            className="absolute left- cursor-pointer"
             color="black"
             size="20"
           />
@@ -55,9 +55,7 @@ function Home() {
 
               <Paper className="flex justify-end break-all  text-sm cursor-pointer pl-7  text-left pt-3 w-[90%] h-24 xl:h-36">
                 {post.snippet.title}
-                <div className="invisible hover:visible">
-                  <PositionedMenu />
-                </div>
+                {"cursor-pointor" ? <PositionedMenu /> : "hidden"}
               </Paper>
             </div>
           ))}
