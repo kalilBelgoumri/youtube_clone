@@ -13,7 +13,7 @@ function Home() {
 
   return (
     <>
-      <div className="overflow-x-scroll scrollbar-hide flex justify-center items-center border-b-[1px] border-t-[1px] px-20">
+      <div className="overflow-x-scroll scrollbar-hide flex justify-center items-center border-b-[1px] border-t-[1px] px-24">
         {data.map((item) => (
           <li
             key={uniqid()}
@@ -23,7 +23,7 @@ function Home() {
           </li>
         ))}
       </div>
-      <div className="pr-48 pl-10 gap-y-5 py-5 grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  ">
+      <div className="pr-48 pl-10 gap-y-3 py-5 grid grid-cols-3 lg:grid-cols-3 xl:grid-cols-4  ">
         {posts?.map((post) => (
           <div
             key={uniqid()}
@@ -39,7 +39,7 @@ function Home() {
 
             <Paper className="flex justify-end  text-sm cursor-pointer pl-7  text-left pt-3 w-[27vw] h-20 xl:w-96 xl:h-36">
               {post.snippet.title}
-              <div className="invisible hover:flex">
+              <div className="invisible hover:visible">
                 <PositionedMenu />
               </div>
             </Paper>

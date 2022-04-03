@@ -107,3 +107,12 @@
 .bm-burger-bars {
     height: 5% !important;
 }
+
+
+/* NavPanel */
+
+@media screen and (max-width: 1000px) {
+    #tabsNav {
+        width: 80px !important;
+    }
+}

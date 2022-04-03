@@ -44,7 +44,7 @@ export default function NavTabPanel() {
   };
 
   const tabStyle = {
-    fontSize: 10,
+    fontSize: 8,
     color: "black",
     display: "flex",
     alignItems: "center",
@@ -55,14 +55,15 @@ export default function NavTabPanel() {
   return (
     <Box
       sx={{
-        marginTop: 5,
+        marginTop: 0,
         flexGrow: 1,
-        bgcolor: "#f9f9f9",
+        bgcolor: "##F9F9F9",
         height: 1000,
         display: "flex",
       }}
     >
       <Tabs
+        id="tabsNav"
         orientation="vertical"
         value={value}
         onChange={handleChange}
@@ -73,36 +74,38 @@ export default function NavTabPanel() {
           },
           width: "200px",
           display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
         <Tab
           sx={tabStyle}
-          icon={<MdHomeFilled color="black" size="24" />}
+          icon={<MdHomeFilled color="black" size="20" />}
           label={<span className="text-black">Acceuil</span>}
           {...a11yProps(0)}
         />
         <Tab
           sx={tabStyle}
-          icon={<IoCompassOutline size="24" />}
+          icon={<IoCompassOutline size="20" />}
           label="Explorer"
           {...a11yProps(0)}
         />
         <Tab
           sx={tabStyle}
-          icon={<ImYoutube2 size="30" />}
+          icon={<ImYoutube2 size="26" />}
           label="Short"
           {...a11yProps(1)}
         />
         <Tab
           sx={tabStyle}
-          icon={<BsCollectionPlay size="24" />}
+          icon={<BsCollectionPlay size="20" />}
           label="Abonnements"
           {...a11yProps(2)}
         />
         <div className="divider divide-x-2 divide-black border-b-2" />
         <Tab
           sx={tabStyle}
-          icon={<BsPlayBtn size="24" />}
+          icon={<BsPlayBtn size="20" />}
           label="Bibliothèque"
           {...a11yProps(3)}
         />

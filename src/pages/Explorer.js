@@ -3,11 +3,14 @@ import CardMediaYoutube from "../components/CardMedia";
 import DataExplorer from "../data/dataExplorer";
 
 function Explorer() {
+  const uniqid = require("uniqid");
+  console.log(uniqid());
+
   return (
     <>
       <div className="w-[60vw] px-5 gap-x-1 gap-y-1 pt-5 grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
-        {DataExplorer.map((data, index) => (
-          <div key={index}>
+        {DataExplorer.map((data) => (
+          <div key={uniqid()}>
             <CardMediaYoutube typo={data.name} src={data.icon} />
           </div>
         ))}
