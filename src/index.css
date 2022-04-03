@@ -111,6 +111,10 @@
 
 /* NavPanel */
 
+.css-n59s4f-MuiTabs-root {
+    width: 160px !important;
+}
+
 @media screen and (max-width: 1000px) {
     #tabsNav {
         width: 80px !important;

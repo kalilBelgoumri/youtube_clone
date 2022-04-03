@@ -55,10 +55,9 @@ export default function NavTabPanel() {
   return (
     <Box
       sx={{
-        marginTop: 0,
-        flexGrow: 1,
+        marginTop: 1,
         bgcolor: "##F9F9F9",
-        height: 1000,
+        height: "100vh",
         display: "flex",
       }}
     >
@@ -72,7 +71,7 @@ export default function NavTabPanel() {
           ".MuiTabs-indicator": {
             display: "none",
           },
-          width: "200px",
+          width: "100px",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
