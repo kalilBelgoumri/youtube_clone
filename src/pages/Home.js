@@ -6,8 +6,10 @@ import YouTube from "react-youtube";
 import { Paper } from "@mui/material";
 import data from "../data/data";
 import PositionedMenu from "../components/MoreIcon";
-import { Container } from "@mui/material";
-
+import {
+  MdOutlineKeyboardArrowLeft,
+  MdOutlineKeyboardArrowRight,
+} from "react-icons/md";
 function Home() {
   const { posts } = useContext(YoutubeContext);
   const uniqid = require("uniqid");
@@ -17,12 +19,16 @@ function Home() {
       <div className="pl-[15vw]">
         <div className="overflow-x-scroll pl-12 scrollbar-hide flex justify-center items-center border-b-[1px] border-t-[1px] ">
           {data.map((item) => (
-            <li
-              key={uniqid()}
-              className="bg-gray-100 flex justify-center items-center cursor-pointer text-center text-sm truncate px-12 m-3 py-1 border border-gray-300 rounded-full"
-            >
-              {item}
-            </li>
+            <>
+              <MdOutlineKeyboardArrowLeft />
+              <li
+                key={uniqid()}
+                className="bg-gray-100 flex justify-center items-center cursor-pointer text-center text-sm truncate px-12 m-3 py-1 border border-gray-300 rounded-full"
+              >
+                {item}
+              </li>
+              <MdOutlineKeyboardArrowRight />
+            </>
           ))}
         </div>
         <div className=" gap-y-3 py-5 md:mr-[1%] lg:mr-2 xl:mr-[1%] grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  ">
