@@ -47,6 +47,7 @@ export default function NavTabPanel() {
     fontSize: 8,
     color: "black",
     display: "flex",
+    flexDirection: "row",
     alignItems: "center",
     justifyContent: "start",
     fontWeight: 100,
@@ -71,7 +72,7 @@ export default function NavTabPanel() {
           ".MuiTabs-indicator": {
             display: "none",
           },
-          width: "100px",
+          width: "90px",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -79,14 +80,15 @@ export default function NavTabPanel() {
       >
         <Tab
           sx={tabStyle}
-          icon={<MdHomeFilled color="black" size="20" />}
-          label={<span className="text-black">Acceuil</span>}
+          icon={<MdHomeFilled color="black" size="22" />}
+          label={<span className="text-black pl-1">Acceuil</span>}
           {...a11yProps(0)}
         />
+
         <Tab
           sx={tabStyle}
-          icon={<IoCompassOutline size="20" />}
-          label="Explorer"
+          icon={<IoCompassOutline size="22" />}
+          label={<span className="pl-1">Explorer</span>}
           {...a11yProps(0)}
         />
         <Tab
