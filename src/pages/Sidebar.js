@@ -13,7 +13,7 @@ function Sidebar() {
       id="tabsNav"
     >
       <nav>
-        <ul className="flex flex-col items-start ">
+        <ul className="flex flex-col items-start ml-12 ">
           <li className="flex items-center justify-center">
             <Link className="inline-flex items-center" to="/">
               <MdHomeFilled color="black" size="26" />

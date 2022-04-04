@@ -22,11 +22,14 @@ function Navbar() {
       <div className="flex justify-center items-center">
         <div className="mb-5 pl-1 pr-4 cursor-pointer">
           {/* <BurgerMenu /> */}
+          {/* <IconButton onClick={toggle} className={open ? "" : null}>
+            <MenuIcon />
+          </IconButton> */}
+        </div>
+        <div className="flex pl-7 overflow-hidden">
           <IconButton onClick={toggle} className={open ? "" : null}>
             <MenuIcon />
           </IconButton>
-        </div>
-        <div className="flex pl-7 overflow-hidden">
           <img className="max-w-[100px]" src="./youtube.webp" alt="youtube" />
           <span className="text-[12px] text-gray-600 -m-4 mt-2 mr-2">FR</span>
         </div>
