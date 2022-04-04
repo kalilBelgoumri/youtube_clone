@@ -17,7 +17,7 @@ function Home() {
 
   return (
     <>
-      <div className="pl-[15vw]">
+      <div className="pl-[15vw] bg-[#f9f9f9]">
         <div className="overflow-x-scroll pl-[50vw] pr-[2vw] scrollbar-hide flex justify-center items-center border-b-[1px] border-t-[1px] ">
           <MdOutlineKeyboardArrowLeft
             className="absolute left- cursor-pointer"

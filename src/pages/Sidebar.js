@@ -9,12 +9,12 @@ import { Divider } from "@mui/material";
 function Sidebar() {
   return (
     <div
-      className="bg-[#f9f9f9] w-[13vw] justify-center absolute h-screen flex flex-row ml-4 mt-10 lg:justify-start"
+      className=" bg-white w-[13vw] justify-center absolute h-screen lg:justify-start"
       id="tabsNav"
     >
       <nav>
-        <ul className="flex flex-col">
-          <li>
+        <ul className="flex flex-col items-start ">
+          <li className="flex items-center justify-center">
             <Link className="inline-flex items-center" to="/">
               <MdHomeFilled color="black" size="26" />
               <span className="hidden lg:inline-flex pl-6 lg:py-2 lg:font-medium lg:text-sm">
@@ -24,19 +24,19 @@ function Sidebar() {
           </li>
           <Link className="inline-flex items-center" to="/Explorer">
             <IoCompassOutline size="26" />
-            <span className="hidden lg:inline-flex pl-6 py-2 font-medium text-sm">
+            <span className="hidden lg:inline-flex justify-start pl-6 py-2 font-medium text-sm">
               Explorer
             </span>
           </Link>
-          <li>
+          <li className="flex justify-items-start">
             <Link className="inline-flex items-center" to="/Short">
               <ImYoutube2 size="28" />
-              <span className="hidden lg:inline-flex pl-6 py-2 font-medium text-sm">
+              <span className="hidden lg:inline-flex justify-start pl-6 py-2 font-medium text-sm">
                 Short
               </span>
             </Link>
           </li>
-          <li>
+          <li className="flex items-center justify-center">
             <Link className="inline-flex items-center" to="/">
               <BsCollectionPlay size="22" />
               <span className="hidden lg:inline-flex pl-6 py-2 font-medium text-sm">
@@ -52,7 +52,7 @@ function Sidebar() {
               </span>
             </Link>
           </li>
-          <li>
+          <li className="flex items-center">
             <Link className="inline-flex items-center" to="/">
               <BsPlayBtn size="22" />
               <span className="hidden lg:inline-flex pl-6 py-2 font-medium text-sm">

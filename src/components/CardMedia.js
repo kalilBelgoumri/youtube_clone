@@ -7,13 +7,14 @@ import { CardActionArea } from "@mui/material";
 
 export default function CardMediaYoutube({ videoId, typo, src }) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, height: 100 }}>
       <CardActionArea>
         <CardMedia component="video" src={videoId} allow="autoPlay" />
-        <img src={src} alt="icon" />
-        <CardContent>
+        <div className="absolute top-0">
+          <img src={src} alt="icon" />
           <p>{typo}</p>
-        </CardContent>
+        </div>
+        <CardContent></CardContent>
       </CardActionArea>
     </Card>
   );
