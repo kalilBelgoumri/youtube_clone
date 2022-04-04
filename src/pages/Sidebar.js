@@ -41,7 +41,14 @@ function Sidebar() {
               <BsCollectionPlay size="22" />
               <span className="hidden lg:inline-flex pl-6 py-2 font-medium text-sm">
                 Abonnements
-                <Divider sx={{ width: "10vw", paddingTop: 3 }} />
+                <Divider
+                  sx={{
+                    width: "215px",
+                    left: 0,
+                    paddingTop: 3.5,
+                    position: "absolute",
+                  }}
+                />
               </span>
             </Link>
           </li>
