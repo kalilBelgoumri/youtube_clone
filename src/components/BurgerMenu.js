@@ -8,7 +8,7 @@ export default function BurgerMenu() {
   const showSettings = (e) => {
     e.preventDefault();
   };
-  
+
   return (
     <Menu left width={220}>
       <div className="flex items-center justify-center">

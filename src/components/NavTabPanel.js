@@ -81,7 +81,7 @@ export default function NavTabPanel() {
         <Tab
           sx={tabStyle}
           icon={<MdHomeFilled color="black" size="22" />}
-          label={<span className="text-black pl-1">Acceuil</span>}
+          label={<span className="pl-1 text-black">Acceuil</span>}
           {...a11yProps(0)}
         />
 
@@ -111,7 +111,7 @@ export default function NavTabPanel() {
           {...a11yProps(3)}
         />
       </Tabs>
-      <div className="overflow-hidden scroll-pl-6 snap-x h-screen flex">
+      <div className="flex h-screen snap-x scroll-pl-6 overflow-hidden">
         <TabPanel value={value} index={0}>
           <Home />
         </TabPanel>

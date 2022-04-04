@@ -8,8 +8,8 @@ function Explorer() {
 
   return (
     <>
-      <div className="pl-[10vw] flex justify-center bg-[#f9f9f9]">
-        <div className="w-[60vw] px-5 gap-x-1 gap-y-1 pt-5 grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
+      <div className="flex  h-screen justify-center bg-[#f9f9f9] pl-[10vw]">
+        <div className="grid w-[60vw] gap-x-1  px-5 pt-5 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
           {DataExplorer.map((data) => (
             <div key={uniqid()}>
               <CardMediaYoutube typo={data.name} src={data.icon} />

@@ -18,39 +18,33 @@ function Navbar() {
   };
 
   return (
-    <div className="flex justify-center items-center overflow-hidden ">
-      <div className="flex justify-center items-center">
-        <div className="mb-5 pl-1 pr-4 cursor-pointer">
-          {/* <BurgerMenu /> */}
-          {/* <IconButton onClick={toggle} className={open ? "" : null}>
-            <MenuIcon />
-          </IconButton> */}
-        </div>
-        <div className="flex pl-7 overflow-hidden">
+    <div className="flex items-center justify-center overflow-hidden ">
+      <div className="flex items-center justify-center">
+        <div className="flex overflow-hidden pl-7">
           <IconButton onClick={toggle} className={open ? "" : null}>
             <MenuIcon />
           </IconButton>
           <img className="max-w-[100px]" src="./youtube.webp" alt="youtube" />
-          <span className="text-[12px] text-gray-600 -m-4 mt-2 mr-2">FR</span>
+          <span className="-m-4 mt-2 mr-2 text-[12px] text-gray-600">FR</span>
         </div>
       </div>
       {/* Search */}
-      <div className="flex mx-auto">
-        <div className="text-black bg-white flex items-center justify-center">
-          <div className="border border-gray-300 overflow-hidden flex">
+      <div className="mx-auto flex">
+        <div className="flex items-center justify-center bg-white text-black">
+          <div className="flex overflow-hidden border border-gray-300">
             <input
               onChange={(e) => setSearch(e.target.value)}
               value={search}
               type="text"
-              className="py-[8px] w-[30vw] md:w-[30vw]"
+              className="w-[30vw] py-[8px] md:w-[30vw]"
               placeholder="Rechercher..."
             />
-            <button className="flex items-center justify-center px-5 bg-gray-50 border-l">
+            <button className="flex items-center justify-center border-l bg-gray-50 px-5">
               <SearchIcon sx={{ color: "gray" }} />
             </button>
           </div>
         </div>
-        <div className="cursor-pointer flex items-center ml-3">
+        <div className="ml-3 flex cursor-pointer items-center">
           <IconButton>
             <MicSharpIcon fontSize="medium" sx={{ color: "black" }} />
           </IconButton>
