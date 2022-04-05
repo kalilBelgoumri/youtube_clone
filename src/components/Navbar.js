@@ -1,5 +1,5 @@
 import BurgerMenu from "./BurgerMenu";
-import { useContext, useState } from "react";
+import { useContext, useState, useRef } from "react";
 import MicSharpIcon from "@mui/icons-material/MicSharp";
 import SearchIcon from "@mui/icons-material/Search";
 import IconButton from "@mui/material/IconButton";
@@ -17,6 +17,12 @@ function Navbar() {
     setOpen(!open);
   };
 
+  const input = useRef(null);
+
+  const handleClick = () => {
+    input.current.classList.add("inputAdd");
+  };
+
   return (
     <div className="flex items-center justify-center overflow-hidden ">
       <div className="flex items-center justify-center">
@@ -29,16 +35,20 @@ function Navbar() {
         </div>
       </div>
       {/* Search */}
-      <div className="mx-auto flex">
+      <div className=" mx-auto flex">
         <div className="flex items-center justify-center bg-white text-black">
-          <div className="flex overflow-hidden border border-gray-300">
+          <div className="flex overflow-hidden border border-gray-300    ">
             <input
+              ref={input}
               onChange={(e) => setSearch(e.target.value)}
               value={search}
+              class="block w-full  border border-slate-300 bg-white py-2 pl-9 pr-3 shadow-sm placeholder:italic placeholder:text-slate-400 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 sm:text-sm"
+              placeholder="Chercher..."
               type="text"
-              className="w-[30vw] py-[8px] md:w-[30vw]"
-              placeholder="Rechercher..."
+              name="search"
+              onClick={handleClick}
             />
+
             <button className="flex items-center justify-center border-l bg-gray-50 px-5">
               <SearchIcon sx={{ color: "gray" }} />
             </button>
@@ -50,6 +60,8 @@ function Navbar() {
           </IconButton>
         </div>
       </div>
+      <div className="inputAdd bg-red-600 " />
+
       <div className="flex items-center justify-between">
         <IconButton>
           <img className="w-8" src="./youtube.svg" alt="youtube" />
