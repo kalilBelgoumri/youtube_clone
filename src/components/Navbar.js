@@ -1,11 +1,9 @@
-import BurgerMenu from "./BurgerMenu";
 import { useContext, useState, useRef } from "react";
 import MicSharpIcon from "@mui/icons-material/MicSharp";
 import SearchIcon from "@mui/icons-material/Search";
 import IconButton from "@mui/material/IconButton";
 import { CgMenuGridR } from "react-icons/cg";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
-import AccountCircle from "@mui/icons-material/AccountCircle";
 import YoutubeContext from "../context/YoutubeContext";
 import MenuIcon from "@mui/icons-material/Menu";
 import img from "../assets/live.png";
@@ -19,6 +17,8 @@ function Navbar() {
   };
 
   const input = useRef(null);
+  const searchRef = useRef(null);
+  console.log(input);
 
   const handleClick = () => {
     input.current.classList.add("inputAdd");
@@ -39,11 +39,14 @@ function Navbar() {
       <div className=" mx-auto flex">
         <div className="flex items-center justify-center bg-white text-black">
           <div className="flex items-center overflow-hidden border border-gray-300    ">
+            <div className="absolute">
+              <SearchIcon ref={searchRef} sx={{ color: "gray" }} />
+            </div>
             <input
               ref={input}
               onChange={(e) => setSearch(e.target.value)}
               value={search}
-              class="block w-[25vw] border  border-slate-300 bg-white py-2 pl-9 pr-3 shadow-sm placeholder:italic placeholder:text-slate-400  focus:w-[30vw] focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 sm:text-sm"
+              className="block w-[25vw] border  border-slate-300 bg-white py-2 pl-9 pr-3 shadow-sm placeholder:italic placeholder:text-slate-400  focus:w-[30vw] focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 sm:text-sm"
               placeholder="Chercher..."
               type="text"
               name="search"
