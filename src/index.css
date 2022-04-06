@@ -130,3 +130,11 @@
 .cursor {
     cursor: pointer;
 }
+
+.test {
+    display: none;
+}
+
+.test1 {
+    display: block;
+}
