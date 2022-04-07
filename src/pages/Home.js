@@ -12,6 +12,7 @@ import {
 
 function Home() {
   const { posts } = useContext(YoutubeContext);
+  const { search } = useContext(YoutubeContext);
   const uniqid = require("uniqid");
 
   return (
@@ -39,23 +40,29 @@ function Home() {
         </div>
 
         <div className=" grid grid-cols-2 gap-y-3 py-5 md:mr-[1%] lg:mr-2 lg:grid-cols-3 xl:mr-[1%] xl:grid-cols-4  ">
-          {posts?.map((post) => (
-            <div
-              key={uniqid()}
-              className="flex w-full flex-col duration-300 hover:-translate-y-1 hover:scale-110"
-            >
-              {
-                <YouTube
-                  className=" h-28 w-[90%] xl:h-52 xl:w-[90%]"
-                  videoId={post.id.videoId}
-                />
-              }
-              <Paper className="flex h-24 w-[90%] cursor-pointer justify-end break-all  pl-7 pt-3 text-left text-sm xl:h-36">
-                {post.snippet.title}
-                <PositionedMenu />
-              </Paper>
-            </div>
-          ))}
+          {posts
+            ?.filter((val) => {
+              return val.id.videoId
+                .toLocaleLowerCase()
+                .includes(search.toLocaleLowerCase());
+            })
+            .map((val) => (
+              <div
+                key={uniqid()}
+                className="flex w-full flex-col duration-300 hover:-translate-y-1 hover:scale-110"
+              >
+                {
+                  <YouTube
+                    className=" h-28 w-[90%] xl:h-52 xl:w-[90%]"
+                    videoId={val.id.videoId}
+                  />
+                }
+                <Paper className="flex h-24 w-[90%] cursor-pointer justify-end break-all  pl-7 pt-3 text-left text-sm xl:h-36">
+                  {val.snippet.title}
+                  <PositionedMenu />
+                </Paper>
+              </div>
+            ))}
           <div />
         </div>
       </div>
